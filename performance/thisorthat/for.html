@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jQuery for vs $.each()</title>
+
+	<script type="application/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			
+			var array = new Array ();
+			for (var i=0; i < 1000000; i++) {
+				array[i] = 0;
+			}
+		
+			console.time('native');
+			var l = array.length;
+			for (var i=0;i<l; i++) {
+				array[i] = i;
+			}
+			console.timeEnd('native');
+		
+			console.time('jquery');
+			$.each (array, function (i) {
+				array[i] = i;
+			});
+			console.timeEnd('jquery');
+						
+		});		
+	</script>	
+	
+</head>
+<body>
+	
+</body>
+</html>
+
