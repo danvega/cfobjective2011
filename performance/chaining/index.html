@@ -9,7 +9,17 @@
 	<script type="application/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
 	<script type="text/javascript">
 		$(function() {
+
+			// no chaining
+			$('a').click(function(){
+				$question = $(this).next();
+				$question.slideToggle("normal");
+				$question.bind('mouseover',function(){alert('mouseover')});
+				$question.css('padding','20px');
+				$question.css('background','#fff');
+			});
 			
+			// chainging
 			$('a').click(function(){
 				$question = $(this).next()
 					.slideToggle("normal")

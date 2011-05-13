@@ -10,21 +10,13 @@
 	<script type="text/javascript">
 		$(function() {
 			
-			// Bad
-			$('a').click(function(){
-				$(this).next().slideToggle("normal");
-				$(this).next().bind('mouseover',function(){alert('mouseover')});
-				$(this).next().css('padding','20px');
-				$(this).next().css('background','#fff');
-			});
+			// bad 
+			var faqs = $('.faq');
+			var questions = $('.faq').find('p');
 			
-			// Good
-			$('a').click(function(){
-				$question = $(this).next().slideToggle("normal");
-				$question.bind('mouseover',function(){alert('mouseover')});
-				$question.next().css('padding','20px');
-				$question.next().css('background','#fff');
-			});
+			// good 
+			var $faqs = $('.faq');
+			var questions = $faqs.find('p');
 						
 		});		
 	</script>	

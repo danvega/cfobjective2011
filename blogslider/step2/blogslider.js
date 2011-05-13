@@ -44,10 +44,6 @@
 			menuItems.not( thisMenuItem ).removeClass('active');
 			thisMenuItem.addClass('active');
 			
-			if ( e.originalEvent ) {
-				// If the user clicked the menu item, then cancel autoPlay
-				clearInterval(timer);
-			}
 		});
 		
 		return this;
